@@ -1,9 +1,10 @@
 import CartWidget from "./CartWidget/CartWidget"
+import logo from '../../assets/logo.png'
 
 const NavBar = () => {
     return(
         <nav>
-            <h3>ForMoreHP</h3>
+            <img src={logo} alt="logo tienda" width="100px"></img>
             <div>
                 <button>Figuras</button>
                 <button>Posters</button>
