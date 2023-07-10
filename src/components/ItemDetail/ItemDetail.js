@@ -1,14 +1,14 @@
-import './Item.css'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
+import Card from 'react-bootstrap/Card'
 
-const Item = ({id, name, img, price, stock}) => {
+const ItemDetail = ({id, name, img, category, details, price, stock}) => {
     return (
         <Card 
         bg={'Danger'.toLowerCase()}
         key={'Danger'}
         text={'Danger'.toLowerCase() === 'light' ? 'dark' : 'white'}
-        className='cardItem ml-20'>
+        className='cardItemDetail mb-2'>
             <header className='header'>
                 <h2 className='title'>
                    {name} 
@@ -19,17 +19,20 @@ const Item = ({id, name, img, price, stock}) => {
             </picture>
             <section>
                 <p className='info'>
-                    Precio: ${price}
+                    Categoria: {category}
                 </p>
                 <p className='info'>
-                    Stock Disponible: {stock}
+                    Descripcion: {details}
+                </p>
+                <p className='info'>
+                    Descripcion: {price}
                 </p>
             </section>
             <footer className='itemFooter'>
-                <Button className='detail'>Ver Detalle</Button>
+                <ItemCount inicio={1} stock={20} agregado={(cantidad) => console.log('Cantidad agregada: ', cantidad)} />   
             </footer>
         </Card>
     )
 }
 
-export default Item
+export default ItemDetail
