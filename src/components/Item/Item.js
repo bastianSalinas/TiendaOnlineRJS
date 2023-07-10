@@ -8,7 +8,7 @@ const Item = ({id, name, img, price, stock}) => {
         bg={'Danger'.toLowerCase()}
         key={'Danger'}
         text={'Danger'.toLowerCase() === 'light' ? 'dark' : 'white'}
-        className='cardItem ml-20'>
+        className='cardItem'>
             <header className='header'>
                 <h2 className='title'>
                    {name} 
