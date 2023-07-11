@@ -1,6 +1,4 @@
-.imgCart{
-    filter: invert(0.4) sepia(1) hue-rotate(2000deg) saturate(100000%);
-}
 .contCart{
     color: #fff;
+    margin-right: 150px;
 }

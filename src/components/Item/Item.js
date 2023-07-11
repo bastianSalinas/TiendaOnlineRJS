@@ -1,6 +1,7 @@
 import './Item.css'
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom'
 
 const Item = ({id, name, img, price, stock}) => {
     return (
@@ -26,7 +27,9 @@ const Item = ({id, name, img, price, stock}) => {
                 </p>
             </section>
             <footer className='itemFooter'>
-                <Button className='detail'>Ver Detalle</Button>
+                <Button>
+                    <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
+                </Button>
             </footer>
         </Card>
     )
