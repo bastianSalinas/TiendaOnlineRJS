@@ -66,7 +66,7 @@ export const getProductos = () => {
 export const getProductosById = (idProductos) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(productos.filter(prod => prod.id === idProductos))
+            resolve(productos.find(prod => prod.id === idProductos))
         }, 600)
     })
 }
