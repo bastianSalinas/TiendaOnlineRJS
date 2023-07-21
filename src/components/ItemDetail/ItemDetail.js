@@ -1,8 +1,18 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({id, name, img, category, details, price, stock}) => {
+
+    const [cantidadClic, setCantidadClic] = useState(0)
+
+    const handleOnAdd = (cantidad) =>{
+        setCantidadClic(cantidad)
+    }
+
     return (
         <Card 
         bg={'Danger'.toLowerCase()}
@@ -29,7 +39,13 @@ const ItemDetail = ({id, name, img, category, details, price, stock}) => {
                 </p>
             </section>
             <footer className='itemFooter'>
-                <ItemCount inicio={1} stock={20} agregado={(cantidad) => console.log('Cantidad agregada: ', cantidad)} />   
+                {
+                    cantidadClic > 0 ? (
+                        <Button><Link to='/cart' className='Option'>Terminar compra</Link></Button>
+                    ) : (
+                        <ItemCount inicio={1} stock={20} agregado={handleOnAdd} />
+                    )
+                }
             </footer>
         </Card>
     )
