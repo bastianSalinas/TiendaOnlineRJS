@@ -3,17 +3,17 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
-import { CartContext } from './components/Context/CartContext';
-import { useState } from 'react';
+import { CartProvider } from './components/Context/CartContext';
 
 function App() {
 
-  const [carrito, setCarrito] = useState([]);
+
 
   return (
     <div className="App">
-      <CartContext.Provider value={ { carrito, setCarrito } }>
+      
       <BrowserRouter>
+      <CartProvider>
         <NavBar />
         <Routes>
             <Route path='/' element={<ItemListContainer />}/>
@@ -21,8 +21,9 @@ function App() {
             <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
             <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
         </Routes>
+        </CartProvider>
       </BrowserRouter>
-      </CartContext.Provider>
+      
     </div>
   );
 }

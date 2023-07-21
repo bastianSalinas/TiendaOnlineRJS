@@ -9,12 +9,17 @@ import { CartContext } from '../Context/CartContext';
 const ItemDetail = ({id, name, img, category, details, price, stock}) => {
 
 
-    const { carrito, setCarrito} = useContext(CartContext)
-    console.log(carrito)
-    const [cantidadClic, setCantidadClic] = useState(1)
+    const [cantidadClic, setCantidadClic] = useState(0)
+
+    const { addItem } = useContext(CartContext)
 
     const handleOnAdd = (cantidad) =>{
         setCantidadClic(cantidad)
+
+        const item = {
+            id, name, price
+        }
+        addItem(item, cantidad)
     }
 
     return (
