@@ -2,12 +2,16 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../Context/CartContext';
 
 const ItemDetail = ({id, name, img, category, details, price, stock}) => {
 
-    const [cantidadClic, setCantidadClic] = useState(0)
+
+    const { carrito, setCarrito} = useContext(CartContext)
+    console.log(carrito)
+    const [cantidadClic, setCantidadClic] = useState(1)
 
     const handleOnAdd = (cantidad) =>{
         setCantidadClic(cantidad)
