@@ -1,14 +1,15 @@
-import { createContext, useState } from "react";
-
+import { createContext, useState, useEffect } from "react"
 
 export const CartContext = createContext({
     cart: []
-});
+})
 
-export const CartProvider = ({ children }) =>{
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-
-    console.log(cart)
+    
+    useEffect(() => {
+        console.log(cart);
+      }, [cart]); 
 
     const addItem = (item, quantity) =>{
         if(!isInCart(item.id)){

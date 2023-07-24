@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CartContext } from '../Context/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({id, name, img, category, details, price, stock}) => {
 
@@ -13,13 +13,13 @@ const ItemDetail = ({id, name, img, category, details, price, stock}) => {
 
     const { addItem } = useContext(CartContext)
 
-    const handleOnAdd = (cantidad) =>{
-        setCantidadClic(cantidad)
+    const handleOnAdd = (quantity) =>{
+        setCantidadClic(quantity)
 
         const item = {
             id, name, price
         }
-        addItem(item, cantidad)
+        addItem(item, quantity)
     }
 
     return (
@@ -52,7 +52,7 @@ const ItemDetail = ({id, name, img, category, details, price, stock}) => {
                     cantidadClic > 0 ? (
                         <Button><Link to='/cart' className='Option'>Terminar compra</Link></Button>
                     ) : (
-                        <ItemCount inicio={1} stock={20} agregado={handleOnAdd} />
+                        <ItemCount inicio={1} stock={stock} agregado={handleOnAdd} />
                     )
                 }
             </footer>
