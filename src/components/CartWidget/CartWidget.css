@@ -1,4 +1,5 @@
-.contCart{
+.contCart .numCarrito{
     color: #fff;
     margin-right: 150px;
+    font-size: large;
 }
