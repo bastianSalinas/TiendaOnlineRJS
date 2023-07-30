@@ -30,7 +30,7 @@ const CartItem = ({id, name, img, price, quantity}) => {
                 </p>
             </section>
             <footer className='itemFooter'>
-                <Button onClick={() => removeItem(id)}>
+                <Button variant="secondary" onClick={() => removeItem(id)}>
                     <Link to={`/cart`} className='Option'>Eliminar</Link>
                 </Button>
             </footer>
