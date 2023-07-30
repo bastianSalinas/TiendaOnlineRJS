@@ -1,5 +1,7 @@
 import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
 import { useState } from "react"
+import './CheckoutForm.css'
 
 
 const CheckoutForm = ({ onConfirm }) => {
@@ -19,23 +21,29 @@ const CheckoutForm = ({ onConfirm }) => {
 
     return (
         <div className="container-form">
-            <form onSubmit={handleConfirm} className="form">
-                <label className="label">
+            <Form onSubmit={handleConfirm} className="form">
+                <Form.Group className="mb-3">
+                <Form.Label className="label">
                     Nombre
-                    <input className="input" type="text" value={name} onChange={({ target }) => setName(target.value)}/>
-                </label>
-                <label className="label">
+                    <Form.Control className="input" type="text" value={name} onChange={({ target }) => setName(target.value)}/>
+                </Form.Label>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label className="label">
                     Telefono
-                    <input className="input" type="text" value={phone} onChange={({ target }) => setPhone(target.value)}/>
-                </label>
-                <label className="label">
+                    <Form.Control className="input" type="text" value={phone} onChange={({ target }) => setPhone(target.value)}/>
+                </Form.Label>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label className="label">
                     Email
-                    <input className="input" type="text" value={email} onChange={({ target }) => setEmail(target.value)}/>
-                </label>
+                    <Form.Control className="input" type="text" value={email} onChange={({ target }) => setEmail(target.value)}/>
+                </Form.Label>
+                </Form.Group>
                 <div>
-                    <Button type="submit">Crear Orden</Button>
+                    <Button variant="dark" type="submit">Crear Orden</Button>
                 </div>
-            </form>
+            </Form>
         </div>
     )
 }

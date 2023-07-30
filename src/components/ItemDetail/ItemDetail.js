@@ -50,9 +50,9 @@ const ItemDetail = ({id, name, img, category, details, price, stock}) => {
             <footer className='itemFooter'>
                 {
                     cantidadClic > 0 ? (
-                        <Button><Link to='/cart' className='Option'>Terminar compra</Link></Button>
+                        <Button variant='secondary'><Link to='/cart' className='Option'>Terminar compra</Link></Button>
                     ) : (
-                        <ItemCount inicio={1} stock={stock} agregado={handleOnAdd} />
+                        <ItemCount variant='secondary' inicio={1} stock={stock} agregado={handleOnAdd} />
                     )
                 }
             </footer>

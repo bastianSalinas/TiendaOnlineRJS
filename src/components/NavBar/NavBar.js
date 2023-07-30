@@ -6,6 +6,7 @@ import { Link, NavLink } from 'react-router-dom'
 import './NavBar.css'
 
 const NavBar = () => {
+    
     return(
         <nav className="navbar bg-danger" bg="dark" data-bs-theme="dark">
             <Link to='/'>
