@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import './ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
 
 import { getDoc, doc } from "firebase/firestore"
