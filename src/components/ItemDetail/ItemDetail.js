@@ -1,4 +1,3 @@
-import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
