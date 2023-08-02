@@ -6,10 +6,6 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    
-    // useEffect(() => {
-    //     console.log(cart);
-    //   }, [cart]); 
 
     const addItem = (item, quantity) =>{
         if(!isInCart(item.id)){
@@ -35,9 +31,9 @@ export const CartProvider = ({ children }) => {
     const totalQuantity = () => {
         let total = 0;
         for (const product of cart) {
-            total += product.quantity;
+            total += product.quantity
         }
-        return total;
+        return total
     }
 
     return (

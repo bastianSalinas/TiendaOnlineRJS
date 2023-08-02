@@ -8,7 +8,6 @@ import { CartContext } from '../../context/CartContext'
 const CartWidget = () => {
     const { totalQuantity } = useContext(CartContext)
 
-    // Llama a la función totalQuantity para obtener el valor real
     const totQuantity = totalQuantity();
 
     return(
@@ -20,5 +19,4 @@ const CartWidget = () => {
         </div>
     )
 }
-
 export default CartWidget
